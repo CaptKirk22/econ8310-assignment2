@@ -37,8 +37,19 @@ model = XGBClassifier(n_estimators=82, max_depth=1, #this just creates the model
 
 modelFit = model.fit(x, y)
 
+testData = pd.read_csv("assignment2test.csv")
+
+testData
+
+testData['DateTime'] = pd.to_datetime(testData['DateTime'])
+testData['hour'] =  testData['DateTime'].dt.hour
+
+xt = testData.drop(['meal', 'DateTime', 'id'], axis=1)
+
 pred = modelFit.predict(xt)
 
 pred
 
-print(accuracy_score(yt, pred)*100) #88.6
+len(pred)
+
+#print(accuracy_score(yt, pred)*100) #88.6
