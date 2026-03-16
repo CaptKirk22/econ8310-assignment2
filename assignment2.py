@@ -29,7 +29,7 @@ x, xt, y, yt = train_test_split(X, Y, test_size=0.1,
 from xgboost import XGBClassifier
 
 
-model = XGBClassifier(n_estimators=82, max_depth=3, #this just creates the model, not put any data into it
+model = XGBClassifier(n_estimators=82, max_depth=1, #this just creates the model, not put any data into it
  learning_rate=0.5, objective='binary:logistic') # learning rate means how much does it assume based on data ex: a high learning rate is like assuming all people are like one citizen of that country
 # multi means multi class problem
 # softmax means highest prob across all classes
