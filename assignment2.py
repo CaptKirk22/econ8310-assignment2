@@ -42,4 +42,4 @@ pred = xgb.predict(xt)
 
 pred
 
-print(accuracy_score(yt, pred)*100)
+print(accuracy_score(yt, pred)*100) #88.6
