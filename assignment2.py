@@ -29,8 +29,8 @@ x, xt, y, yt = train_test_split(X, Y, test_size=0.1,
 from xgboost import XGBClassifier
 
 
-model = XGBClassifier(n_estimators=82, max_depth=1, #this just creates the model, not put any data into it
- learning_rate=0.5, objective='binary:logistic') # learning rate means how much does it assume based on data ex: a high learning rate is like assuming all people are like one citizen of that country
+model = XGBClassifier(n_estimators=200, max_depth=3, #this just creates the model, not put any data into it
+ learning_rate=0.1, objective='binary:logistic') # learning rate means how much does it assume based on data ex: a high learning rate is like assuming all people are like one citizen of that country
 # multi means multi class problem
 # softmax means highest prob across all classes
 
@@ -50,6 +50,9 @@ pred = modelFit.predict(xt)
 
 pred
 
+pred = pred.astype(int)
+
 len(pred)
+
 
 #print(accuracy_score(yt, pred)*100) #88.6
